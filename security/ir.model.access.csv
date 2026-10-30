@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_alumno_user,access.alumno.user,model_primer_modulo_alumno,base.group_user,1,1,1,1
+access_relojeria_reloj_user,access.relojeria.reloj.user,model_relojeria_reloj,base.group_user,1,1,1,1
+access_relojeria_proveedores_user,access.relojeria.proveedores.user,model_relojeria_proveedores,base.group_user,1,1,1,1
+access_relojeria_servicio_cliente_user,access.relojeria.servicio_cliente.user,model_relojeria_servicio_cliente,base.group_user,1,1,1,1

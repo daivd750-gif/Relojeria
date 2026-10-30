@@ -18,8 +18,10 @@
 
     # always loaded
     'data': [
-      'views/alumno_view.xml',
         'security/ir.model.access.csv',
+        'views/reloj_view.xml',
+        'views/proveedores_view.xml',
+        'views/servicio_cliente_view.xml',
     ],
 
     'installable': True,

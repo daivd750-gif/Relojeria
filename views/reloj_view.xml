@@ -7,12 +7,12 @@
         <field name="arch" type="xml">
             <list string="Caracteristicas del Reloj">
                 <field name="calidad"/>
-                <field name="tamaño"/>
+                <field name="tamano"/>
                 <field name="materiales"/>
                 <field name="peso"/>
                 <field name="tipo_Reloj"/>
                 <field name="resistencia_Agua"/>
-                <field name="resistencia_GolpesArañazos"/>
+                <field name="resistencia_GolpesAranazos"/>
                 <field name="durabilidad"/>
                 <field name="personalizacion"/>
             </list>
@@ -28,12 +28,12 @@
                 <sheet>
                     <group>
                         <field name="calidad"/>
-                        <field name="tamaño"/>
+                        <field name="tamano"/>
                         <field name="materiales"/>
                         <field name="peso"/>
                         <field name="tipo_Reloj"/>
                         <field name="resistencia_Agua"/>
-                        <field name="resistencia_GolpesArañazos"/>
+                        <field name="resistencia_GolpesAranazos"/>
                         <field name="durabilidad"/>
                         <field name="personalizacion"/>
                     </group>
@@ -53,7 +53,7 @@
     <!-- Menús -->
     <menuitem id="menu_relojeria_root" name="Gestionar la relojeria"/>
 
-    <menuitem id="menu_relojes_modificar"
+    <menuitem id="menu_relojeria_modificar"
               parent="menu_relojeria_root"
               name="Relojes"
               action="action_reloj"/>

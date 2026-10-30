@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id="view_servicio_cliente_list" model="ir.ui.view">
+        <field name="name">relojeria.servicio_cliente.list</field>
+        <field name="model">relojeria.servicio_cliente</field>
+        <field name="arch" type="xml">
+            <list string="Servicio al Cliente">
+                <field name="nombre"/>
+                <field name="email"/>
+                <field name="preguntas"/>
+                <field name="peticiones"/>
+                <field name="devoluciones"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_servicio_cliente_form" model="ir.ui.view">
+        <field name="name">relojeria.servicio_cliente.form</field>
+        <field name="model">relojeria.servicio_cliente</field>
+        <field name="arch" type="xml">
+            <form string="Ficha del Servicio al Cliente">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="email"/>
+                        <field name="preguntas"/>
+                        <field name="peticiones"/>
+                        <field name="devoluciones"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_servicio_cliente" model="ir.actions.act_window">
+        <field name="name">SERVICIO AL CLIENTE</field>
+        <field name="res_model">relojeria.servicio_cliente</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_servicio_cliente_list"/>
+    </record>
+
+    <menuitem id="menu_servicio_cliente_root" name="Gestionar el servicio al cliente"/>
+
+    <menuitem id="menu_servicio_cliente_modificar"
+              parent="menu_servicio_cliente_root"
+              name="Servicio al Cliente"
+              action="action_servicio_cliente"/>
+
+</odoo>
