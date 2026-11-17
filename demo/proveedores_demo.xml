@@ -1,0 +1,42 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="proveedor_xiaomi" model="relojeria.proveedores">
+            <field name="nombre_proveedor">xiaomi</field>
+            <field name="precio_compra">45.50</field>
+            <field name="telefono">911234567</field>
+            <field name="direccion">Calle Gran Vía 25, Madrid</field>
+            <field name="metodo_pago">transferencia</field>
+            <field name="plazo_entrega">3d</field>
+            <field name="fecha_alta">2025-01-15</field>
+            <field name="ultima_entrega">2026-10-20 10:30:00</field>
+            <field name="pedidos">12</field>
+            <field name="notas">Proveedor habitual de pulseras de actividad.</field>
+        </record>
+
+        <record id="proveedor_samsung" model="relojeria.proveedores">
+            <field name="nombre_proveedor">samsung</field>
+            <field name="precio_compra">180.00</field>
+            <field name="telefono">932345678</field>
+            <field name="direccion">Avenida Diagonal 120, Barcelona</field>
+            <field name="metodo_pago">tarjeta</field>
+            <field name="plazo_entrega">24h</field>
+            <field name="fecha_alta">2025-03-02</field>
+            <field name="ultima_entrega">2026-11-05 16:00:00</field>
+            <field name="pedidos">8</field>
+        </record>
+
+        <record id="proveedor_apple" model="relojeria.proveedores">
+            <field name="nombre_proveedor">apple</field>
+            <field name="precio_compra">320.00</field>
+            <field name="telefono">963456789</field>
+            <field name="direccion">Calle Colón 40, Valencia</field>
+            <field name="metodo_pago">transferencia</field>
+            <field name="plazo_entrega">1s</field>
+            <field name="fecha_alta">2025-06-10</field>
+            <field name="pedidos">5</field>
+            <field name="notas">Pedidos mínimos de 3 unidades.</field>
+        </record>
+
+    </data>
+</odoo>

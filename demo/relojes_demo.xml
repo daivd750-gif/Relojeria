@@ -1,0 +1,98 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="reloj_xiaomi_s1" model="relojeria.reloj">
+            <field name="name">Xiaomi Watch S1</field>
+            <field name="calidad">media</field>
+            <field name="tipo_Reloj">inteligente</field>
+            <field name="tamano">46</field>
+            <field name="materiales">Acero inoxidable y cristal de zafiro</field>
+            <field name="peso">52</field>
+            <field name="resistencia_Agua">50m</field>
+            <field name="resistencia_GolpesAranazos">media</field>
+            <field name="durabilidad">4</field>
+            <field name="personalizacion">Esferas intercambiables y correas de silicona o cuero.</field>
+            <field name="fecha_fabricacion">2025-09-01</field>
+            <field name="fecha_ingreso">2026-09-15 10:00:00</field>
+            <field name="disponible" eval="True"/>
+            <field name="precio_venta">69.90</field>
+            <field name="proveedor_id" ref="proveedor_xiaomi"/>
+        </record>
+
+        <record id="reloj_xiaomi_redmi" model="relojeria.reloj">
+            <field name="name">Redmi Watch Básico</field>
+            <field name="calidad">basica</field>
+            <field name="tipo_Reloj">digital</field>
+            <field name="tamano">41</field>
+            <field name="materiales">Plástico y cristal reforzado</field>
+            <field name="peso">35</field>
+            <field name="resistencia_Agua">30m</field>
+            <field name="resistencia_GolpesAranazos">baja</field>
+            <field name="durabilidad">2</field>
+            <field name="fecha_fabricacion">2025-06-20</field>
+            <field name="fecha_ingreso">2026-09-15 10:05:00</field>
+            <field name="disponible" eval="True"/>
+            <field name="precio_venta">49.90</field>
+            <field name="proveedor_id" ref="proveedor_xiaomi"/>
+            <!-- similar al anterior (ya existe) -->
+            <field name="similar_ids" eval="[(6, 0, [ref('reloj_xiaomi_s1')])]"/>
+        </record>
+
+        <record id="reloj_samsung_galaxy" model="relojeria.reloj">
+            <field name="name">Samsung Galaxy Watch 6</field>
+            <field name="calidad">alta</field>
+            <field name="tipo_Reloj">inteligente</field>
+            <field name="tamano">44</field>
+            <field name="materiales">Aluminio y cristal Sapphire Crystal</field>
+            <field name="peso">59</field>
+            <field name="resistencia_Agua">50m</field>
+            <field name="resistencia_GolpesAranazos">alta</field>
+            <field name="durabilidad">5</field>
+            <field name="personalizacion">Grabado en la caja y correas a elegir.</field>
+            <field name="fecha_fabricacion">2025-11-10</field>
+            <field name="fecha_ingreso">2026-10-02 12:30:00</field>
+            <field name="disponible" eval="True"/>
+            <field name="precio_venta">289.00</field>
+            <field name="proveedor_id" ref="proveedor_samsung"/>
+            <field name="similar_ids" eval="[(6, 0, [ref('reloj_xiaomi_s1')])]"/>
+        </record>
+
+        <record id="reloj_samsung_fit" model="relojeria.reloj">
+            <field name="name">Samsung Galaxy Fit Deportivo</field>
+            <field name="calidad">media</field>
+            <field name="tipo_Reloj">digital</field>
+            <field name="tamano">40</field>
+            <field name="materiales">Aluminio y silicona</field>
+            <field name="peso">30</field>
+            <field name="resistencia_Agua">50m</field>
+            <field name="resistencia_GolpesAranazos">media</field>
+            <field name="durabilidad">3</field>
+            <field name="fecha_fabricacion">2025-08-05</field>
+            <field name="fecha_ingreso">2026-10-02 12:40:00</field>
+            <field name="disponible" eval="False"/>
+            <field name="precio_venta">119.00</field>
+            <field name="proveedor_id" ref="proveedor_samsung"/>
+            <field name="similar_ids" eval="[(6, 0, [ref('reloj_xiaomi_redmi'), ref('reloj_samsung_galaxy')])]"/>
+        </record>
+
+        <record id="reloj_apple_s9" model="relojeria.reloj">
+            <field name="name">Apple Watch Series 9</field>
+            <field name="calidad">alta</field>
+            <field name="tipo_Reloj">inteligente</field>
+            <field name="tamano">45</field>
+            <field name="materiales">Aluminio reciclado y cristal Ion-X</field>
+            <field name="peso">38.8</field>
+            <field name="resistencia_Agua">100m</field>
+            <field name="resistencia_GolpesAranazos">alta</field>
+            <field name="durabilidad">5</field>
+            <field name="personalizacion">Correas intercambiables y esferas personalizables.</field>
+            <field name="fecha_fabricacion">2025-12-01</field>
+            <field name="fecha_ingreso">2026-10-25 09:00:00</field>
+            <field name="disponible" eval="True"/>
+            <field name="precio_venta">449.00</field>
+            <field name="proveedor_id" ref="proveedor_apple"/>
+            <field name="similar_ids" eval="[(6, 0, [ref('reloj_samsung_galaxy')])]"/>
+        </record>
+
+    </data>
+</odoo>

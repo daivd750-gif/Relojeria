@@ -5,16 +5,20 @@
         <field name="name">relojeria.reloj.list</field>
         <field name="model">relojeria.reloj</field>
         <field name="arch" type="xml">
-            <list string="Caracteristicas del Reloj">
+            <list string="Relojes">
+                <field name="name"/>
                 <field name="calidad"/>
+                <field name="tipo_Reloj"/>
                 <field name="tamano"/>
                 <field name="materiales"/>
                 <field name="peso"/>
-                <field name="tipo_Reloj"/>
                 <field name="resistencia_Agua"/>
                 <field name="resistencia_GolpesAranazos"/>
                 <field name="durabilidad"/>
-                <field name="personalizacion"/>
+                <field name="precio_venta"/>
+                <field name="proveedor_id"/>
+                <field name="fecha_ingreso"/>
+                <field name="disponible"/>
             </list>
         </field>
     </record>
@@ -26,15 +30,33 @@
         <field name="arch" type="xml">
             <form string="Ficha del Reloj">
                 <sheet>
+                    <field name="foto_adjunta" widget="image" class="oe_avatar"/>
+
                     <group>
-                        <field name="calidad"/>
-                        <field name="tamano"/>
-                        <field name="materiales"/>
-                        <field name="peso"/>
-                        <field name="tipo_Reloj"/>
-                        <field name="resistencia_Agua"/>
-                        <field name="resistencia_GolpesAranazos"/>
-                        <field name="durabilidad"/>
+                        <group>
+                            <field name="name" placeholder="Modelo del reloj"/>
+                            <field name="calidad"/>
+                            <field name="tipo_Reloj"/>
+                            <field name="tamano"/>
+                            <field name="materiales"/>
+                            <field name="peso"/>
+                            <field name="durabilidad"/>
+                        </group>
+                        <group>
+                            <field name="resistencia_Agua"/>
+                            <field name="resistencia_GolpesAranazos"/>
+                            <field name="precio_venta"/>
+                            <field name="margen_beneficio"/>
+                            <field name="disponible"/>
+                            <field name="fecha_fabricacion"/>
+                            <field name="fecha_ingreso"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="proveedor_id"/>
+                        <field name="similar_ids" widget="many2many_tags"/>
+                        <field name="consulta_ids" widget="many2many_tags"/>
                         <field name="personalizacion"/>
                     </group>
                 </sheet>
@@ -42,20 +64,36 @@
         </field>
     </record>
 
-    <!-- Acción que enlaza ambas vistas -->
-    <record id="action_reloj" model="ir.actions.act_window">
-        <field name="name">RELOJERIA</field>
-        <field name="res_model">relojeria.reloj</field>
-        <field name="view_mode">list,form</field>
-        <field name="view_id" ref="view_reloj_list"/>
+    <!-- Vista SEARCH -->
+    <record id="view_reloj_search" model="ir.ui.view">
+        <field name="name">relojeria.reloj.search</field>
+        <field name="model">relojeria.reloj</field>
+        <field name="arch" type="xml">
+            <search string="Buscar relojes">
+                <field name="name"/>
+                <field name="calidad"/>
+                <field name="tipo_Reloj"/>
+                <field name="materiales"/>
+                <field name="proveedor_id"/>
+                <field name="disponible"/>
+            </search>
+        </field>
     </record>
 
-    <!-- Menús -->
-    <menuitem id="menu_relojeria_root" name="Gestionar la relojeria"/>
+    <!-- Accion -->
+    <record id="action_reloj" model="ir.actions.act_window">
+        <field name="name">Relojes</field>
+        <field name="res_model">relojeria.reloj</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
-    <menuitem id="menu_relojeria_modificar"
+    <!-- Menus -->
+    <menuitem id="menu_relojeria_root" name="Gestionar la relojeria" sequence="10"/>
+
+    <menuitem id="menu_relojes_modificar"
               parent="menu_relojeria_root"
               name="Relojes"
-              action="action_reloj"/>
+              action="action_reloj"
+              sequence="10"/>
 
 </odoo>

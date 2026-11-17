@@ -22,6 +22,9 @@
         'views/reloj_view.xml',
         'views/proveedores_view.xml',
         'views/servicio_cliente_view.xml',
+        'demo/proveedores_demo.xml',
+        'demo/relojes_demo.xml',
+        'demo/servicio_cliente_demo.xml',
     ],
 
     'installable': True,

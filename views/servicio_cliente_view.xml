@@ -1,5 +1,6 @@
 <odoo>
 
+    <!-- Vista LIST -->
     <record id="view_servicio_cliente_list" model="ir.ui.view">
         <field name="name">relojeria.servicio_cliente.list</field>
         <field name="model">relojeria.servicio_cliente</field>
@@ -7,38 +8,75 @@
             <list string="Servicio al Cliente">
                 <field name="nombre"/>
                 <field name="email"/>
-                <field name="preguntas"/>
-                <field name="peticiones"/>
-                <field name="devoluciones"/>
+                <field name="tipo_consulta"/>
+                <field name="prioridad"/>
+                <field name="contacto"/>
+                <field name="fecha_consulta"/>
+                <field name="fecha_limite"/>
+                <field name="resuelto"/>
             </list>
         </field>
     </record>
 
+    <!-- Vista FORM -->
     <record id="view_servicio_cliente_form" model="ir.ui.view">
         <field name="name">relojeria.servicio_cliente.form</field>
         <field name="model">relojeria.servicio_cliente</field>
         <field name="arch" type="xml">
-            <form string="Ficha del Servicio al Cliente">
+            <form string="Servicio al Cliente">
                 <sheet>
+                    <field name="foto_adjunta" widget="image"/>
+
                     <group>
-                        <field name="nombre"/>
-                        <field name="email"/>
-                        <field name="preguntas"/>
-                        <field name="peticiones"/>
-                        <field name="devoluciones"/>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="email"/>
+                            <field name="contacto"/>
+                            <field name="tipo_consulta"/>
+                            <field name="prioridad"/>
+                        </group>
+                        <group>
+                            <field name="fecha_consulta"/>
+                            <field name="fecha_limite"/>
+                            <field name="resuelto"/>
+                            <field name="proveedor_id"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="reloj_ids" widget="many2many_tags" colspan="2"/>
+                        <field name="preguntas" colspan="2"/>
+                        <field name="peticiones" colspan="2"/>
+                        <field name="devoluciones" colspan="2"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="action_servicio_cliente" model="ir.actions.act_window">
-        <field name="name">SERVICIO AL CLIENTE</field>
-        <field name="res_model">relojeria.servicio_cliente</field>
-        <field name="view_mode">list,form</field>
-        <field name="view_id" ref="view_servicio_cliente_list"/>
+    <!-- Vista SEARCH -->
+    <record id="view_servicio_cliente_search" model="ir.ui.view">
+        <field name="name">relojeria.servicio_cliente.search</field>
+        <field name="model">relojeria.servicio_cliente</field>
+        <field name="arch" type="xml">
+            <search string="Buscar consultas">
+                <field name="nombre"/>
+                <field name="email"/>
+                <field name="tipo_consulta"/>
+                <field name="prioridad"/>
+                <field name="resuelto"/>
+            </search>
+        </field>
     </record>
 
+    <!-- Accion -->
+    <record id="action_servicio_cliente" model="ir.actions.act_window">
+        <field name="name">Servicio al Cliente</field>
+        <field name="res_model">relojeria.servicio_cliente</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menus -->
     <menuitem id="menu_servicio_cliente_root" name="Gestionar el servicio al cliente"/>
 
     <menuitem id="menu_servicio_cliente_modificar"
